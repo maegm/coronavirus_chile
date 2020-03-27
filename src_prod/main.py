@@ -11,10 +11,10 @@ import descartes
 if __name__ == "__main__":
     pathname = os.path.abspath(os.path.dirname(__file__))
 
-    data = {'Fecha': ['2020-03-03', '2020-03-04', '2020-03-05', '2020-03-06', '2020-03-07', '2020-03-08',
-                      '2020-03-09', '2020-03-10', '2020-03-11', '2020-03-12', '2020-03-13', '2020-03-14',
-                      '2020-03-15', '2020-03-16'],
-            'Casos acumulados': [1, 3, 4, 5, 6, 10, 13, 17, 23, 33, 43, 61, 75, 156]}
+    data = {'Fecha': ['2020-03-16', '2020-03-17', '2020-03-18', '2020-03-19', '2020-03-20',
+                      '2020-03-21', '2020-03-22', '2020-03-23', '2020-03-24', '2020-03-25'],
+            'Casos acumulados': [156, 201, 238, 342, 434,
+                                 537, 632, 746, 922, 1142]}
 
     df = pd.DataFrame.from_dict(data)
     df['Fecha'] = pd.to_datetime(df['Fecha'], format='%Y-%m-%d')
@@ -64,6 +64,6 @@ if __name__ == "__main__":
     print(reg.score(X, y))
     print(reg.coef_)
     print(reg.intercept_)
-    print(np.exp(reg.predict(np.array([[len(X) + 1]]))))
+    print(np.exp(reg.predict(np.array([[len(X)]]))))
 
 
